@@ -5,17 +5,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name="HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name="CounterServlet", urlPatterns = "/counter")
+public class CounterPageServlet extends HttpServlet {
+    protected int counter = 0;
+    protected void setCounter(int newCounter) {
+        counter = newCounter;
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        setCounter(counter+1);
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
-        if(req.getParameter("name")==null){
-            out.println("<h1>Hello World!</h1>");
-        } else {
-            String name = req.getParameter("name");
-            out.println("<h1>Hello, " + name + "!</h1>");
-        }
+//        int counter = Integer.parseInt(req.getParameter("count"));
+        out.println("<h1>There have been " + counter + " visits to this page!</h1>");
     }
 }
