@@ -28,7 +28,10 @@
                 ID
             </th>
             <th>
-                Name
+                First Name
+            </th>
+            <th>
+                Last Name
             </th>
             <th>
                 Age
@@ -37,7 +40,8 @@
         <c:forEach var="person" items="${people}">
             <tr>
                 <td>${person.id}</td>
-                <td>${person.firstName} ${person.lastName}</td>
+                <td>${person.firstName}</td>
+                <td>${person.lastName}</td>
                 <td>${person.age}</td>
             </tr>
         </c:forEach>
