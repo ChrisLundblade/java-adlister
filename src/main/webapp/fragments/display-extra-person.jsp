@@ -16,7 +16,7 @@
 </head>
 <body>
     <ul>
-        <li>${dude.id}: ${dude.firstName} ${dude.lastName}, age: ${dude.age}</li>
+        <li>${dude.id}</li><li>${dude.firstName}</li><li>${dude.lastName}</li><li>${dude.age}</li>
     </ul>
 </body>
 </html>
